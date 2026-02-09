@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail, Phone, MapPin, User } from 'lucide-react';
 import { ScrollToSectionLink } from './ScrollToSectionLink';
 
 export function Footer() {
@@ -49,17 +49,26 @@ export function Footer() {
           <div>
             <h3 className="font-semibold mb-4">Contact Information</h3>
             <div className="flex flex-col gap-3 text-sm text-muted-foreground">
-              <div className="flex items-start gap-2">
-                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>123 Tech Street, Business District, City, State 12345</span>
+              <div className="flex items-center gap-2">
+                <User className="h-4 w-4 flex-shrink-0" />
+                <span>
+                  <span className="font-medium text-foreground">Owner:</span> NANDHAKUMAR G
+                </span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <a href="tel:9080250925" className="hover:text-foreground transition-colors">
+                  9080250925
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4 flex-shrink-0" />
-                <span>info@nksystech.com</span>
+                <a
+                  href="mailto:nandhakumar.g2402@gmail.com"
+                  className="hover:text-foreground transition-colors break-all"
+                >
+                  nandhakumar.g2402@gmail.com
+                </a>
               </div>
             </div>
           </div>

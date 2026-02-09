@@ -1,7 +1,7 @@
 {
   "frontend/src/App.tsx": "Main application component that renders the complete single-page layout with Header, HeroSection, About section, ServicesSection, ContactSection, and Footer.",
   "frontend/src/components/site/Header.tsx": "Responsive header component with logo, desktop navigation, and mobile sheet menu that scrolls to page sections.",
-  "frontend/src/components/site/Footer.tsx": "Footer component displaying NK SYSTECH branding, quick links, placeholder contact information, and attribution.",
+  "frontend/src/components/site/Footer.tsx": "Footer component displaying NK SYSTECH branding, quick links, and actual owner contact information (NANDHAKUMAR G, phone: 9080250925, email: nandhakumar.g2402@gmail.com) with attribution.",
   "frontend/src/components/site/HeroSection.tsx": "Hero section with headline, description, CTA buttons, and hero banner image showcasing NK SYSTECH services.",
   "frontend/src/components/site/Section.tsx": "Reusable section wrapper component providing consistent spacing and container layout across page sections.",
   "frontend/src/components/site/ScrollToSectionLink.tsx": "Accessible link component that smoothly scrolls to on-page sections with keyboard support.",

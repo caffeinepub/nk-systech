@@ -1,153 +1,49 @@
 {
   "kind": "build_request",
-  "title": "Create NK SYSTECH business website (Home, About, Services, Contact) with inquiry form",
+  "title": "Add owner contact details to NK SYSTECH site footer",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Create a responsive multi-section business website for “NK SYSTECH” with clear navigation and content for: Home, About, Services, and Contact.",
+      "id": "REQ-8",
+      "text": "Update the website contact information to include the owner’s details: Owner Name: NANDHAKUMAR G, Phone: 9080250925, Email: nandhakumar.g2402@gmail.com. Replace the existing placeholder phone and email values in the footer, and display the owner name alongside the contact information using clear English labels (e.g., “Owner: …”).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-4"
         ],
         "quotes": [
-          "Im creating a Business type site for college project Business name: NK SYSTECH ,  Business type CCTV ,Workstation, Networking,Laptops, Computers Multibrand Sales and Service"
+          "add OWNER NAME: NANDHAKUMAR G, PHONE: 9080250925, MAIL: nandhakumar.g2402@gmail.com"
         ]
       },
       "acceptanceCriteria": [
-        "A top navigation (desktop) and mobile menu allow users to reach Home, About, Services, and Contact sections/pages",
-        "All pages/sections display the business name “NK SYSTECH” prominently",
-        "Site is responsive and readable on mobile, tablet, and desktop sizes"
-      ]
-    },
-    {
-      "id": "REQ-2",
-      "text": "Add a Services area that clearly lists and describes NK SYSTECH offerings for: CCTV, Workstations, Networking, Laptops, and Computers, emphasizing multibrand sales and service.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "Business type CCTV ,Workstation, Networking,Laptops, Computers Multibrand Sales and Service"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Services section/page includes at least five service cards/blocks: CCTV, Workstations, Networking, Laptops, Computers",
-        "Each service includes a short description in English and a clear “Sales & Service” emphasis",
-        "Services are presented in a consistent layout (grid/list) that adapts responsively"
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "text": "Add a simple “Products / Multibrand Sales & Service” listing component to showcase categories (not individual SKUs) relevant to CCTV and computer/networking equipment.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ]
-      },
-      "acceptanceCriteria": [
-        "A listing UI exists that presents categories (e.g., Cameras/DVR/NVR, Routers/Switches, Laptops, Desktops, Workstations) without requiring pricing or inventory",
-        "Each category item includes a short label and a brief supporting line of text",
-        "The listing is accessible from the Services section/page or Home page"
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "text": "Implement a Contact section/page with a form that collects: name, phone number, email, service interest (dropdown), and message; submit the inquiry to the backend for storage and show success/error feedback in the UI.",
-      "target": "both",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Contact form includes fields: Name, Phone, Email, Service Interest, Message, plus a Submit button",
-        "Client-side validation prevents empty required fields and clearly indicates validation errors",
-        "On submit, the UI shows a loading state and then a success message when stored, or an error message if it fails",
-        "Backend stores inquiries in stable state and exposes a method to create an inquiry and a method to list inquiries (for basic verification/testing)"
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "text": "Apply a cohesive visual theme suitable for a tech services business (e.g., clean industrial tech) using a consistent color palette, typography, spacing, and components across all pages/sections (avoid default/unstyled template look).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ]
-      },
-      "acceptanceCriteria": [
-        "A consistent theme is applied across navigation, headings, buttons, cards, and footer",
-        "Color palette avoids blue/purple as dominant colors and remains readable with sufficient contrast",
-        "Layout feels intentional (hero/sections spacing, consistent card styling, consistent button styles)"
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "text": "Add a footer with NK SYSTECH basic business info placeholders (address placeholder, phone placeholder, email placeholder) and quick links to Home/About/Services/Contact.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Footer renders on all pages/sections",
-        "Footer contains NK SYSTECH name and placeholder contact details in English",
-        "Footer includes working quick links to the site’s main sections/pages"
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "text": "Add generated static image assets to the frontend and use them in the UI (logo in header/footer, hero/banner on Home, icons/illustrations in Services).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Generated images are placed under frontend/public/assets/generated and referenced directly by the frontend (not served from backend)",
-        "Logo image is used in the header and footer",
-        "Hero/banner image appears on the Home page/section",
-        "Service icons/illustrations appear in the Services section/page"
+        "In the footer Contact Information area, the phone number is shown as 9080250925 (no placeholder number remains).",
+        "In the footer Contact Information area, the email is shown as nandhakumar.g2402@gmail.com (no placeholder email remains).",
+        "The footer Contact Information area explicitly shows the owner name as “Owner: NANDHAKUMAR G”.",
+        "All user-facing labels are in English.",
+        "No backend/canister changes are introduced."
       ]
     }
   ],
   "constraints": [
-    "Use English for all user-facing text",
-    "Respect single-actor Motoko backend architecture (all logic in backend/main.mo)",
-    "Do not edit files under frontend/src/components/ui or other immutable paths; compose them from the app code instead",
-    "Do not add third-party auth providers; only Internet Identity is allowed (not required for this site)",
-    "Do not integrate external email/SMS/push services; contact submissions must be stored on-canister if implemented"
+    "Frontend files under frontend/src/components/ui are read-only and must not be edited directly.",
+    "Do not modify files listed in frontend immutablePaths (compose components instead if needed).",
+    "Keep backend as a single Motoko actor; do not add new backend services."
   ],
   "nonGoals": [
-    "E-commerce checkout, payments, inventory management, or real-time stock tracking",
-    "Third-party CRM/email delivery integration for contact messages",
-    "User accounts/admin dashboard beyond a simple inquiry listing endpoint for verification"
+    "Adding or changing business address text (no address was provided).",
+    "Changing the inquiry form fields or backend inquiry storage logic.",
+    "Adding authentication or admin-only editing for contact details."
   ],
   "imageRequirements": {
-    "required": [
-      "Minimal modern tech logo, textless emblem/mark (nk-systech-logo.dim_512x512.png)",
-      "Wide hero banner for a tech services business (cctv cameras, networking, laptops/workstations), clean and modern (nk-systech-hero.dim_1600x600.png)",
-      "Set of 5 simple line/flat icons: CCTV, Workstation, Networking, Laptop, Desktop Computer (nk-systech-service-icons.dim_1024x256.png)"
-    ],
+    "required": [],
     "edits": []
   },
   "userProfileUpdate": {
     "goalsToAdd": [],
     "goalsToRemove": [],
-    "preferencesToAdd": [
-      "User-facing site copy should be in English"
-    ],
+    "preferencesToAdd": [],
     "preferencesToRemove": [],
-    "miscToAdd": [
-      "Business name: NK SYSTECH",
-      "Business type: CCTV, Workstation, Networking, Laptops, Computers; multibrand sales and service"
-    ],
+    "miscToAdd": [],
     "miscToRemove": [],
     "fieldsToSet": {},
     "fieldsToDelete": []

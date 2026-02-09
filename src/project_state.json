@@ -1,11 +1,10 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
+  "projectStateVersion": 5,
   "summary": "Business website for college project: NK SYSTECH (CCTV, workstations, networking, laptops/computers) multibrand sales and service.",
   "architectural_notes": [],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Minimal modern tech logo, textless emblem/mark (nk-systech-logo.dim_512x512.png)\n- Wide hero banner for a tech services business (cctv cameras, networking, laptops/workstations), clean and modern (nk-systech-hero.dim_1600x600.png)\n- Set of 5 simple line/flat icons: CCTV, Workstation, Networking, Laptop, Desktop Computer (nk-systech-service-icons.dim_1024x256.png)",
   "existing_features": [
     {
       "id": "feature-create-a-responsive-multi-section-business-website-for-nk-systech-with-clear-navigation-and-content-for-home-about-services-and-contact",
@@ -62,6 +61,14 @@
         "REQ-7"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-website-contact-information-to-include-the-owner-s-details-owner-name-nandhakumar-g-phone-9080250925-email-nandhakumar-g2402-gmail-com-replace-the-existing-placeholder-phone-and-email-values-in-the-footer-and-display-the-owner-name-alongside-the-contact-information-using-clear-english-labels-e-g-owner",
+      "title": "Update the website contact information to include the owner’s details: Owner Name: NANDHAKUMAR G, Phone: 9080250925, Email: nandhakumar.g2402@gmail.com. Replace the existing placeholder phone and email values in the footer, and display the owner name alongside the contact information using clear English labels (e.g., “Owner: …”).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -74,6 +81,12 @@
     {
       "id": "AR-2",
       "summary": "Add product/service listing focused on multibrand sales and service for CCTV, computers, laptops, networking, and workstations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Add owner contact details (Owner: NANDHAKUMAR G, Phone: 9080250925, Email: nandhakumar.g2402@gmail.com) to the site (e.g., footer/contact section)",
       "reqIds": [],
       "status": "pending"
     }
