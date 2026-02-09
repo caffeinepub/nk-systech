@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 21,
+  "projectStateVersion": 23,
   "summary": "Business website for college project: NK SYSTECH (CCTV, workstations, networking, laptops/computers) multibrand sales and service.",
   "architectural_notes": [
     "Email delivery for inquiries is not available (account email feature disabled); use a “Call Now / WhatsApp” button as the selected alternative contact path."
@@ -8,9 +8,10 @@
   "known_issues": [
     "Production deployment failed with a deployment error (needs investigation/fix before launch).",
     "Build/deploy encountered a configuration error (\"Please notify the Caffeine team\") while attempting logo update.",
-    "Logo update not reflected in the deployed site (logo not showing)."
+    "Logo update not reflected in the deployed site (logo not showing).",
+    "Call Now / WhatsApp contact buttons are missing/not visible in the Contact section despite deployment; needs fix."
   ],
-  "isFixRequest": false,
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-create-a-responsive-multi-section-business-website-for-nk-systech-with-clear-navigation-and-content-for-home-about-services-and-contact",
@@ -169,6 +170,30 @@
       "title": "Update the Contact section copy to clarify that visitors can either submit the inquiry form or contact directly via phone/WhatsApp, without changing other site sections.",
       "reqIds": [
         "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-production-ui-so-the-call-now-and-whatsapp-buttons-are-visible-in-the-contact-section-section-id-contact-on-all-screen-sizes-without-requiring-users-to-interact-with-hidden-hover-only-elements-or-scroll-past-unexpected-overlays",
+      "title": "Fix the production UI so the \"Call Now\" and \"WhatsApp\" buttons are visible in the Contact section (section id \"contact\") on all screen sizes, without requiring users to interact with hidden/hover-only elements or scroll past unexpected overlays.",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-direct-contact-buttons-use-the-exact-expected-destinations-for-nk-systech-call-now-uses-tel-9080250925-and-whatsapp-uses-https-wa-me-919080250925-and-opens-in-a-new-tab-window-with-safe-rel-attributes",
+      "title": "Ensure the direct-contact buttons use the exact expected destinations for NK SYSTECH: Call Now uses \"tel:9080250925\" and WhatsApp uses \"https://wa.me/919080250925\" and opens in a new tab/window with safe rel attributes.",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-lightweight-ui-level-regression-check-manual-or-automated-to-verify-the-contact-section-renders-the-direct-contact-buttons-in-production-builds-so-the-issue-does-not-reoccur-in-future-deployments",
+      "title": "Add a lightweight UI-level regression check (manual or automated) to verify the Contact section renders the direct-contact buttons in production builds, so the issue does not reoccur in future deployments.",
+      "reqIds": [
+        "REQ-24"
       ],
       "version": 1
     }

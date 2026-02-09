@@ -1,38 +1,63 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add Call Now and WhatsApp buttons to Contact section",
+  "title": "Restore visible Call Now / WhatsApp buttons in Contact section across breakpoints",
   "requirements": [
     {
-      "id": "REQ-20",
-      "summary": "Add prominent Call Now and WhatsApp buttons in the Contact section (id \"contact\") using phone number 9080250925 with correct tel and wa.me links.",
+      "id": "REQ-22",
+      "summary": "Ensure the Contact section (id \"contact\") always displays the \"Contact Us Directly\" area with visible, unobscured Call Now and WhatsApp buttons across screen sizes.",
       "acceptanceCriteria": [
-        "The Contact section displays two clearly labeled buttons: \"Call Now\" and \"WhatsApp\".",
-        "\"Call Now\" uses a tel link to 9080250925 (href=\"tel:9080250925\").",
-        "\"WhatsApp\" opens WhatsApp chat for 9080250925 using a wa.me link with the correct country code for India (https://wa.me/919080250925) and opens in a new tab (target=\"_blank\" with rel=\"noopener noreferrer\").",
-        "Buttons are visible and usable on both mobile and desktop layouts and do not break the existing inquiry form submission flow.",
-        "All user-facing text on the buttons is in English."
+        "On the deployed site, navigating to the Contact section shows a clearly visible \"Contact Us Directly\" area containing both \"Call Now\" and \"WhatsApp\" buttons.",
+        "Buttons are visible and usable on mobile and desktop breakpoints (e.g., small screens show stacked buttons; larger screens can show side-by-side).",
+        "Buttons are not obscured by the sticky header or any overlapping container, and do not require extra scrolling inside a nested container to appear."
       ],
       "file_operations": [
         {
+          "path": "frontend/src/components/site/Section.tsx",
+          "operation": "modify",
+          "description": "Add scroll-offset-safe spacing (e.g., Tailwind scroll margin classes) to section wrappers so scrolling to \"#contact\" does not place the top content under the sticky header in production builds."
+        },
+        {
           "path": "frontend/src/components/site/ContactSection.tsx",
           "operation": "modify",
-          "description": "Add a prominent direct-contact button group near the Contact section header and/or near the inquiry form. Use the existing shadcn-ui Button component to render consistent, accessible buttons/links (e.g., as link-styled buttons) for: (1) href=\"tel:9080250925\" labeled \"Call Now\" and (2) href=\"https://wa.me/919080250925\" labeled \"WhatsApp\" with target=\"_blank\" and rel=\"noopener noreferrer\". Ensure responsive layout (stack on mobile, inline on desktop) and keep the form submission behavior unchanged. Verify the component's usage instructions before implementing."
+          "description": "Adjust the \"Contact Us Directly\" container/layout to guarantee visibility on all breakpoints (e.g., ensure no accidental clipping/overlap, keep buttons stacked on small screens and side-by-side on larger screens). Use existing shadcn/ui components (e.g., Button, Card) as composed building blocks; Verify the component's usage instructions before implementing."
         }
       ]
     },
     {
-      "id": "REQ-21",
-      "summary": "Update Contact section copy to clarify visitors can either submit the inquiry form or contact directly via phone/WhatsApp, without changing other sections.",
+      "id": "REQ-23",
+      "summary": "Confirm direct-contact buttons use the exact tel/WhatsApp destinations with safe link attributes.",
       "acceptanceCriteria": [
-        "The Contact section includes a short English line of helper text near the new buttons (or near the form) indicating direct contact options are available.",
-        "No references are added implying inquiries will be delivered to email automatically."
+        "The \"Call Now\" button link href is exactly \"tel:9080250925\".",
+        "The \"WhatsApp\" button link href is exactly \"https://wa.me/919080250925\".",
+        "The WhatsApp link uses target=\"_blank\" and rel includes \"noopener noreferrer\".",
+        "Clicking each button performs the expected behavior in a browser (initiates a call on devices that support tel links; opens WhatsApp chat link in a new tab)."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/site/ContactSection.tsx",
           "operation": "modify",
-          "description": "Revise the Contact section helper text (header paragraph and/or card description) to explicitly mention the two contact options: submit the inquiry form or contact directly by phone/WhatsApp. Keep wording in English, avoid implying automatic email delivery, and avoid changes to other sections. Verify the component's usage instructions before implementing."
+          "description": "Ensure the rendered anchors for \"Call Now\" and \"WhatsApp\" use the exact required href values. Ensure WhatsApp uses target=\"_blank\" and rel includes \"noopener noreferrer\". Add stable UI identifiers (e.g., data-testid) for both buttons/links to support future checks. Use existing shadcn/ui Button composition; Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "summary": "Add a lightweight UI-level regression check (documented) to verify the Contact section renders both direct-contact buttons with correct labels and href values in production builds.",
+      "acceptanceCriteria": [
+        "A documented verification step exists for production build output/preview that confirms the \"Call Now\" and \"WhatsApp\" buttons are present in the Contact section.",
+        "The verification explicitly checks for the presence of both button labels in the rendered page and confirms the links match the required href values."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/REGRESSION_CHECKS.md",
+          "operation": "create",
+          "description": "Document a production-build verification procedure (build + preview) that navigates to the Contact section and confirms: (1) both button labels \"Call Now\" and \"WhatsApp\" are visible, and (2) their link href values are exactly \"tel:9080250925\" and \"https://wa.me/919080250925\" respectively (including target/rel expectations for WhatsApp)."
+        },
+        {
+          "path": "frontend/src/components/site/ContactSection.tsx",
+          "operation": "modify",
+          "description": "Ensure the direct-contact buttons have stable selectors (e.g., data-testid or aria-label) and clearly rendered text so the documented regression check can reliably validate presence and hrefs. Use existing shadcn/ui components as composed building blocks; Verify the component's usage instructions before implementing."
         }
       ]
     }

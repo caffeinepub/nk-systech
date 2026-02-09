@@ -1,11 +1,12 @@
 # Specification
 
 ## Summary
-**Goal:** Provide direct phone and WhatsApp contact options in the Contact section so visitors can reach NK SYSTECH without relying on email delivery.
+**Goal:** Ensure the “Call Now” and “WhatsApp” direct-contact buttons are clearly visible and usable in the Contact section (id "contact") across all screen sizes in production.
 
 **Planned changes:**
-- Add two prominent buttons in the Contact section (id: `contact`): “Call Now” (`href="tel:9080250925"`) and “WhatsApp” (`https://wa.me/919080250925`, opens in a new tab with `rel="noopener noreferrer"`).
-- Add a short English helper line in the Contact section clarifying that visitors can either submit the inquiry form or contact directly via phone/WhatsApp (without implying inquiries are delivered to email).
-- Ensure the new buttons work well on mobile and desktop and do not disrupt the existing inquiry form flow.
+- Update the Contact section layout/styles so the “Contact Us Directly” area and both buttons are always visible (not hover-only, not hidden, not inside unexpected scroll/overlay containers) on mobile and desktop.
+- Ensure the buttons are not obscured by the sticky header or overlapping containers at any breakpoint.
+- Set and verify exact link destinations: “Call Now” uses `tel:9080250925`; “WhatsApp” uses `https://wa.me/919080250925` with `target="_blank"` and `rel` including `noopener noreferrer`.
+- Add a lightweight UI-level regression verification step (manual or automated) that checks production build/preview for both button labels in the Contact section and validates their href values.
 
-**User-visible outcome:** Visitors can choose to submit the inquiry form or contact NK SYSTECH instantly via a Call Now button or a WhatsApp chat link from the Contact section.
+**User-visible outcome:** Visitors can reliably see and use the “Call Now” and “WhatsApp” buttons in the Contact section on any device, with links that work as expected.

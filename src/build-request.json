@@ -1,66 +1,98 @@
 {
   "kind": "build_request",
-  "title": "Add Call Now and WhatsApp contact buttons on the Contact section (9080250925)",
+  "title": "Fix missing Call Now / WhatsApp buttons visibility in Contact section",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-20",
-      "text": "Add prominent \"Call Now\" and \"WhatsApp\" contact buttons to the Contact section (section id \"contact\") using the phone number 9080250925, so visitors can contact NK SYSTECH directly as an alternative to email delivery.",
+      "id": "REQ-22",
+      "text": "Fix the production UI so the \"Call Now\" and \"WhatsApp\" buttons are visible in the Contact section (section id \"contact\") on all screen sizes, without requiring users to interact with hidden/hover-only elements or scroll past unexpected overlays.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6",
-          "msg-8",
-          "msg-10",
-          "msg-11"
+          "msg-4",
+          "msg-5",
+          "msg-12",
+          "msg-13"
         ],
         "quotes": [
-          "need site inquires recieve by my mail",
-          "3",
-          "yes proceed",
+          "theres no button",
+          "where the buton",
+          "1",
           "build"
         ]
       },
       "acceptanceCriteria": [
-        "The Contact section displays two clearly labeled buttons: \"Call Now\" and \"WhatsApp\".",
-        "\"Call Now\" uses a tel link to 9080250925 (href=\"tel:9080250925\").",
-        "\"WhatsApp\" opens WhatsApp chat for 9080250925 using a wa.me link with the correct country code for India (https://wa.me/919080250925) and opens in a new tab (target=\"_blank\" with rel=\"noopener noreferrer\").",
-        "Buttons are visible and usable on both mobile and desktop layouts and do not break the existing inquiry form submission flow.",
-        "All user-facing text on the buttons is in English."
+        "On the deployed site, navigating to the Contact section shows a clearly visible \"Contact Us Directly\" area containing both \"Call Now\" and \"WhatsApp\" buttons.",
+        "Buttons are visible and usable on mobile and desktop breakpoints (e.g., small screens show stacked buttons; larger screens can show side-by-side).",
+        "Buttons are not obscured by the sticky header or any overlapping container, and do not require extra scrolling inside a nested container to appear."
       ]
     },
     {
-      "id": "REQ-21",
-      "text": "Update the Contact section copy to clarify that visitors can either submit the inquiry form or contact directly via phone/WhatsApp, without changing other site sections.",
+      "id": "REQ-23",
+      "text": "Ensure the direct-contact buttons use the exact expected destinations for NK SYSTECH: Call Now uses \"tel:9080250925\" and WhatsApp uses \"https://wa.me/919080250925\" and opens in a new tab/window with safe rel attributes.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-6",
-          "msg-8"
+          "msg-4",
+          "msg-5",
+          "msg-12"
         ],
         "quotes": [
-          "need site inquires recieve by my mail",
-          "any other  options to get"
+          "The Call Now and WhatsApp buttons are on your Contact page.",
+          "theres no button",
+          "build"
         ]
       },
       "acceptanceCriteria": [
-        "The Contact section includes a short English line of helper text near the new buttons (or near the form) indicating direct contact options are available.",
-        "No references are added implying inquiries will be delivered to email automatically."
+        "The \"Call Now\" button link href is exactly \"tel:9080250925\".",
+        "The \"WhatsApp\" button link href is exactly \"https://wa.me/919080250925\".",
+        "The WhatsApp link uses target=\"_blank\" and rel includes \"noopener noreferrer\".",
+        "Clicking each button performs the expected behavior in a browser (initiates a call on devices that support tel links; opens WhatsApp chat link in a new tab)."
+      ]
+    },
+    {
+      "id": "REQ-24",
+      "text": "Add a lightweight UI-level regression check (manual or automated) to verify the Contact section renders the direct-contact buttons in production builds, so the issue does not reoccur in future deployments.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-5",
+          "msg-12",
+          "msg-13"
+        ],
+        "quotes": [
+          "theres no button",
+          "1",
+          "build"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A documented verification step exists for production build output/preview that confirms the \"Call Now\" and \"WhatsApp\" buttons are present in the Contact section.",
+        "The verification explicitly checks for the presence of both button labels in the rendered page and confirms the links match the required href values."
       ]
     }
   ],
   "constraints": [
-    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
-    "Backend must remain a single Motoko actor (no additional backend services).",
-    "Use English for any user-facing text."
+    "Frontend files under frontend/src/components/ui and the immutable hook/entry files listed in SYSTEM_CONTEXT must not be edited; compose existing components instead.",
+    "Keep all user-facing text in English."
   ],
   "nonGoals": [
-    "Sending inquiries to email (email delivery) or integrating any third-party email provider.",
-    "Adding WhatsApp API automation or real-time chat.",
-    "Changing the existing inquiry storage behavior in the backend."
+    "Do not change the phone number (must remain 9080250925) or the WhatsApp number format (must remain https://wa.me/919080250925).",
+    "Do not move the buttons to a different section of the site; only ensure they are visible and working in the Contact section as intended.",
+    "Do not add new backend functionality for calling or WhatsApp."
   ],
   "imageRequirements": {
     "required": [],
     "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [],
+    "goalsToRemove": [],
+    "preferencesToAdd": [],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
   }
 }

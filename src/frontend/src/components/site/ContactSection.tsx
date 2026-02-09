@@ -58,18 +58,35 @@ export function ContactSection() {
             For immediate assistance, call us or message on WhatsApp
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button asChild size="lg" variant="default" className="flex-1 sm:flex-none">
-              <a href="tel:9080250925" className="flex items-center justify-center gap-2">
+            <Button 
+              asChild 
+              size="lg" 
+              variant="default" 
+              className="flex-1 sm:flex-none"
+            >
+              <a 
+                href="tel:9080250925" 
+                className="flex items-center justify-center gap-2"
+                data-testid="call-now-button"
+                aria-label="Call NK SYSTECH at 9080250925"
+              >
                 <Phone className="h-5 w-5" />
                 Call Now
               </a>
             </Button>
-            <Button asChild size="lg" variant="secondary" className="flex-1 sm:flex-none">
+            <Button 
+              asChild 
+              size="lg" 
+              variant="secondary" 
+              className="flex-1 sm:flex-none"
+            >
               <a 
                 href="https://wa.me/919080250925" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2"
+                data-testid="whatsapp-button"
+                aria-label="Message NK SYSTECH on WhatsApp"
               >
                 <MessageCircle className="h-5 w-5" />
                 WhatsApp

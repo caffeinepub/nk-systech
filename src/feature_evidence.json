@@ -2,10 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-add-prominent-call-now-and-whatsapp-contact-buttons-to-the-contact-section-section-id-contact-using-the-phone-number-9080250925-so-visitors-can-contact-nk-systech-directly-as-an-alternative-to-email-delivery",
-      "featureTitle": "Add prominent \"Call Now\" and \"WhatsApp\" contact buttons to the Contact section (section id \"contact\") using the phone number 9080250925, so visitors can contact NK SYSTECH directly as an alternative to email delivery.",
+      "featureId": "feature-fix-the-production-ui-so-the-call-now-and-whatsapp-buttons-are-visible-in-the-contact-section-section-id-contact-on-all-screen-sizes-without-requiring-users-to-interact-with-hidden-hover-only-elements-or-scroll-past-unexpected-overlays",
+      "featureTitle": "Fix the production UI so the \"Call Now\" and \"WhatsApp\" buttons are visible in the Contact section (section id \"contact\") on all screen sizes, without requiring users to interact with hidden/hover-only elements or scroll past unexpected overlays.",
       "files": [
-        "frontend/src/components/site/ContactSection.tsx"
+        "frontend/src/components/site/ContactSection.tsx",
+        "frontend/src/components/site/Section.tsx"
       ],
       "components": [
         "core-infrastructure@1.0.2",
@@ -15,13 +16,13 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-20"
+        "REQ-22"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-update-the-contact-section-copy-to-clarify-that-visitors-can-either-submit-the-inquiry-form-or-contact-directly-via-phone-whatsapp-without-changing-other-site-sections",
-      "featureTitle": "Update the Contact section copy to clarify that visitors can either submit the inquiry form or contact directly via phone/WhatsApp, without changing other site sections.",
+      "featureId": "feature-ensure-the-direct-contact-buttons-use-the-exact-expected-destinations-for-nk-systech-call-now-uses-tel-9080250925-and-whatsapp-uses-https-wa-me-919080250925-and-opens-in-a-new-tab-window-with-safe-rel-attributes",
+      "featureTitle": "Ensure the direct-contact buttons use the exact expected destinations for NK SYSTECH: Call Now uses \"tel:9080250925\" and WhatsApp uses \"https://wa.me/919080250925\" and opens in a new tab/window with safe rel attributes.",
       "files": [
         "frontend/src/components/site/ContactSection.tsx"
       ],
@@ -33,7 +34,26 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-21"
+        "REQ-23"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-lightweight-ui-level-regression-check-manual-or-automated-to-verify-the-contact-section-renders-the-direct-contact-buttons-in-production-builds-so-the-issue-does-not-reoccur-in-future-deployments",
+      "featureTitle": "Add a lightweight UI-level regression check (manual or automated) to verify the Contact section renders the direct-contact buttons in production builds, so the issue does not reoccur in future deployments.",
+      "files": [
+        "frontend/REGRESSION_CHECKS.md",
+        "frontend/src/components/site/ContactSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-24"
       ],
       "confidence": "high"
     }
