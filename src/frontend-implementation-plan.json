@@ -1,0 +1,226 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "NK SYSTECH responsive business website (Home, About, Services, Contact) with inquiry form",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a responsive single-page, multi-section NK SYSTECH website with clear navigation to Home, About, Services, and Contact.",
+      "acceptanceCriteria": [
+        "A top navigation (desktop) and mobile menu allow users to reach Home, About, Services, and Contact sections/pages",
+        "All pages/sections display the business name “NK SYSTECH” prominently",
+        "Site is responsive and readable on mobile, tablet, and desktop sizes"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the main single-page layout with anchored sections (Home, About, Services, Contact) and ensure “NK SYSTECH” is prominent in the header/hero. Use shadcn-ui components (e.g., Sheet/Drawer for mobile navigation, Button for CTAs) to compose a responsive header/navigation. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/site/Header.tsx",
+          "operation": "create",
+          "description": "Add a responsive header with desktop nav links and a mobile menu toggle that scrolls to the Home/About/Services/Contact sections. Use shadcn-ui navigation primitives (e.g., Button + Sheet) for consistent interaction patterns. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/site/Section.tsx",
+          "operation": "create",
+          "description": "Create a small reusable section wrapper component to standardize spacing, max-width, and headings across the page for consistent responsiveness."
+        },
+        {
+          "path": "frontend/src/components/site/ScrollToSectionLink.tsx",
+          "operation": "create",
+          "description": "Implement a helper link component that scrolls smoothly to an on-page section id and supports keyboard navigation (Enter/Space) for accessibility."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Ensure the app renders the new App.tsx and that global providers remain intact; no authentication UI is introduced (Internet Identity provider can stay unused)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add a Services area listing CCTV, Workstations, Networking, Laptops, and Computers with short English descriptions emphasizing Sales & Service.",
+      "acceptanceCriteria": [
+        "Services section/page includes at least five service cards/blocks: CCTV, Workstations, Networking, Laptops, Computers",
+        "Each service includes a short description in English and a clear “Sales & Service” emphasis",
+        "Services are presented in a consistent layout (grid/list) that adapts responsively"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/site/ServicesSection.tsx",
+          "operation": "create",
+          "description": "Create the Services section with a responsive grid of five consistent cards (CCTV, Workstations, Networking, Laptops, Computers) including concise English descriptions with explicit “Sales & Service” emphasis. Use shadcn-ui components (e.g., Card, Badge) for consistent styling. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the ServicesSection into the page and ensure it is reachable via header navigation and on-page anchors."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add a simple Products / Multibrand Sales & Service category listing component and make it reachable from Services or Home.",
+      "acceptanceCriteria": [
+        "A listing UI exists that presents categories (e.g., Cameras/DVR/NVR, Routers/Switches, Laptops, Desktops, Workstations) without requiring pricing or inventory",
+        "Each category item includes a short label and a brief supporting line of text",
+        "The listing is accessible from the Services section/page or Home page"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/site/ProductCategories.tsx",
+          "operation": "create",
+          "description": "Create a category listing component (no pricing/inventory) presenting relevant multibrand categories (e.g., Cameras/DVR/NVR, Routers/Switches, Laptops, Desktops, Workstations) with a label and a short supporting line per item. Use shadcn-ui components (e.g., Card, Separator) for a consistent, responsive layout. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/site/ServicesSection.tsx",
+          "operation": "modify",
+          "description": "Include the ProductCategories listing within or directly below the Services area so it is accessible from the Services section without adding a new top-level route."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Implement a Contact section with an inquiry form (validation + loading/success/error states) that submits to the backend and optionally allows basic inquiry listing for verification/testing.",
+      "acceptanceCriteria": [
+        "Contact form includes fields: Name, Phone, Email, Service Interest, Message, plus a Submit button",
+        "Client-side validation prevents empty required fields and clearly indicates validation errors",
+        "On submit, the UI shows a loading state and then a success message when stored, or an error message if it fails",
+        "Backend stores inquiries in stable state and exposes a method to create an inquiry and a method to list inquiries (for basic verification/testing)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/site/ContactSection.tsx",
+          "operation": "create",
+          "description": "Create the Contact section containing the inquiry form fields (Name, Phone, Email, Service Interest dropdown, Message) with client-side validation and clear inline error messaging. Use shadcn-ui form inputs (e.g., Input, Textarea, Select, Button, Alert) for consistent UI. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useInquirySubmission.ts",
+          "operation": "create",
+          "description": "Implement a hook to manage inquiry submission state (idle/loading/success/error), perform basic client-side validation, and call the backend submit function. Keep user-facing copy in English."
+        },
+        {
+          "path": "frontend/src/lib/serviceInterest.ts",
+          "operation": "create",
+          "description": "Define the service-interest dropdown options for NK SYSTECH (CCTV, Workstations, Networking, Laptops, Computers, Other) and map them safely to the existing backend ServiceInterest enum values from frontend/src/backend.d.ts (labels shown to users remain NK SYSTECH-focused, while values are translated for backend compatibility)."
+        },
+        {
+          "path": "frontend/src/hooks/useInquiryList.ts",
+          "operation": "create",
+          "description": "Add a small verification/testing helper hook that can fetch the inquiry list from the backend (e.g., via getAllInquiries) and expose loading/error state for a read-only list UI (no admin CRUD)."
+        },
+        {
+          "path": "frontend/src/components/site/InquiryListDebug.tsx",
+          "operation": "create",
+          "description": "Add an optional, clearly labeled read-only inquiry listing block (for basic verification/testing) near the Contact section, rendered behind a collapsible disclosure. Use shadcn-ui components (e.g., Accordion/Collapsible, Table) for a clean presentation. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the ContactSection into the page and ensure it is reachable via header navigation and on-page anchors; include the optional inquiry listing block for basic verification/testing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Apply a cohesive, non-default tech-services visual theme with consistent palette/typography/spacing (avoid blue/purple dominance).",
+      "acceptanceCriteria": [
+        "A consistent theme is applied across navigation, headings, buttons, cards, and footer",
+        "Color palette avoids blue/purple as dominant colors and remains readable with sufficient contrast",
+        "Layout feels intentional (hero/sections spacing, consistent card styling, consistent button styles)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global styling entry point for Tailwind plus a cohesive theme using CSS variables (tech/industrial feel). Ensure dominant colors are not blue/purple (e.g., charcoal/graphite with amber/green accents) and maintain readable contrast."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust theme extensions (if needed) to support the chosen palette/typography/spacing consistently across header, buttons, cards, and footer; keep styling centralized and intentional."
+        },
+        {
+          "path": "frontend/src/components/site/HeroSection.tsx",
+          "operation": "create",
+          "description": "Create a Home hero section with consistent typography, spacing, and primary/secondary CTAs to establish a polished theme. Use shadcn-ui components (e.g., Button) for consistent CTAs. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire in HeroSection and ensure overall section spacing and component styling feels intentional and consistent across the page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add a footer with NK SYSTECH placeholders for address/phone/email and quick links to main sections.",
+      "acceptanceCriteria": [
+        "Footer renders on all pages/sections",
+        "Footer contains NK SYSTECH name and placeholder contact details in English",
+        "Footer includes working quick links to the site’s main sections/pages"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/site/Footer.tsx",
+          "operation": "create",
+          "description": "Create a footer that displays NK SYSTECH name, placeholder address/phone/email, and quick links to Home/About/Services/Contact (scroll-to-section behavior). Use shadcn-ui typography/link styling patterns where appropriate. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Render Footer at the bottom of the page so it appears across all sections and ensure quick links scroll to the correct anchors."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Add generated static images under frontend/public/assets/generated and use them as logo, hero/banner, and service icons in the UI.",
+      "acceptanceCriteria": [
+        "Generated images are placed under frontend/public/assets/generated and referenced directly by the frontend (not served from backend)",
+        "Logo image is used in the header and footer",
+        "Hero/banner image appears on the Home page/section",
+        "Service icons/illustrations appear in the Services section/page"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/nk-systech-logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated NK SYSTECH logo asset at the exact required path for direct frontend referencing."
+        },
+        {
+          "path": "frontend/public/assets/generated/nk-systech-hero.dim_1600x600.png",
+          "operation": "create",
+          "description": "Add the generated wide hero/banner image asset at the exact required path for direct frontend referencing."
+        },
+        {
+          "path": "frontend/public/assets/generated/nk-systech-service-icons.dim_1024x256.png",
+          "operation": "create",
+          "description": "Add the generated combined service icons image asset at the exact required path for direct frontend referencing."
+        },
+        {
+          "path": "frontend/src/components/site/Header.tsx",
+          "operation": "modify",
+          "description": "Reference and render the logo image from frontend/public/assets/generated/nk-systech-logo.dim_512x512.png in the header brand area (responsive sizing and accessible alt text)."
+        },
+        {
+          "path": "frontend/src/components/site/Footer.tsx",
+          "operation": "modify",
+          "description": "Reference and render the logo image from frontend/public/assets/generated/nk-systech-logo.dim_512x512.png in the footer brand area (accessible alt text)."
+        },
+        {
+          "path": "frontend/src/components/site/HeroSection.tsx",
+          "operation": "modify",
+          "description": "Use the hero banner image from frontend/public/assets/generated/nk-systech-hero.dim_1600x600.png in the Home hero (as a banner/illustration) with accessible alt text and responsive behavior."
+        },
+        {
+          "path": "frontend/src/components/site/ServicesSection.tsx",
+          "operation": "modify",
+          "description": "Display service icons/illustrations sourced from frontend/public/assets/generated/nk-systech-service-icons.dim_1024x256.png alongside each service card (ensure consistent sizing and accessible alt text)."
+        }
+      ]
+    }
+  ]
+}

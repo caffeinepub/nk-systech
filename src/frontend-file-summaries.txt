@@ -1,0 +1,17 @@
+{
+  "frontend/src/App.tsx": "Main application component that renders the complete single-page layout with Header, HeroSection, About section, ServicesSection, ContactSection, and Footer.",
+  "frontend/src/components/site/Header.tsx": "Responsive header component with logo, desktop navigation, and mobile sheet menu that scrolls to page sections.",
+  "frontend/src/components/site/Footer.tsx": "Footer component displaying NK SYSTECH branding, quick links, placeholder contact information, and attribution.",
+  "frontend/src/components/site/HeroSection.tsx": "Hero section with headline, description, CTA buttons, and hero banner image showcasing NK SYSTECH services.",
+  "frontend/src/components/site/Section.tsx": "Reusable section wrapper component providing consistent spacing and container layout across page sections.",
+  "frontend/src/components/site/ScrollToSectionLink.tsx": "Accessible link component that smoothly scrolls to on-page sections with keyboard support.",
+  "frontend/src/components/site/ServicesSection.tsx": "Services section displaying five service cards (CCTV, Workstations, Networking, Laptops, Computers) with icons, descriptions, and the ProductCategories component.",
+  "frontend/src/components/site/ProductCategories.tsx": "Product category listing component showing multibrand equipment categories without pricing or inventory details.",
+  "frontend/src/components/site/ContactSection.tsx": "Contact form section with validated inquiry submission, loading/success/error states, and optional inquiry list for testing.",
+  "frontend/src/components/site/InquiryListDebug.tsx": "Collapsible debug component displaying submitted inquiries in a table for verification and testing purposes.",
+  "frontend/src/hooks/useInquirySubmission.ts": "Custom hook managing inquiry form submission with validation, loading states, and backend integration.",
+  "frontend/src/hooks/useInquiryList.ts": "React Query hook for fetching all inquiries from the backend with loading and error states.",
+  "frontend/src/lib/serviceInterest.ts": "Service interest mapping utility that translates NK SYSTECH services to backend ServiceInterest enum values.",
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring a clean, professional grayscale palette with warm amber accents for tech business aesthetic.",
+  "frontend/tailwind.config.js": "Tailwind configuration with extended theme including custom colors, Inter font family, and refined shadows for professional appearance."
+}

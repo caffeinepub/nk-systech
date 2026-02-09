@@ -1,0 +1,149 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-responsive-multi-section-business-website-for-nk-systech-with-clear-navigation-and-content-for-home-about-services-and-contact",
+      "featureTitle": "Create a responsive multi-section business website for “NK SYSTECH” with clear navigation and content for: Home, About, Services, and Contact.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/site/Header.tsx",
+        "frontend/src/components/site/ScrollToSectionLink.tsx",
+        "frontend/src/components/site/Section.tsx",
+        "frontend/src/main.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-services-area-that-clearly-lists-and-describes-nk-systech-offerings-for-cctv-workstations-networking-laptops-and-computers-emphasizing-multibrand-sales-and-service",
+      "featureTitle": "Add a Services area that clearly lists and describes NK SYSTECH offerings for: CCTV, Workstations, Networking, Laptops, and Computers, emphasizing multibrand sales and service.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/site/ServicesSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-simple-products-multibrand-sales-service-listing-component-to-showcase-categories-not-individual-skus-relevant-to-cctv-and-computer-networking-equipment",
+      "featureTitle": "Add a simple “Products / Multibrand Sales & Service” listing component to showcase categories (not individual SKUs) relevant to CCTV and computer/networking equipment.",
+      "files": [
+        "frontend/src/components/site/ProductCategories.tsx",
+        "frontend/src/components/site/ServicesSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-contact-section-page-with-a-form-that-collects-name-phone-number-email-service-interest-dropdown-and-message-submit-the-inquiry-to-the-backend-for-storage-and-show-success-error-feedback-in-the-ui",
+      "featureTitle": "Implement a Contact section/page with a form that collects: name, phone number, email, service interest (dropdown), and message; submit the inquiry to the backend for storage and show success/error feedback in the UI.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/site/ContactSection.tsx",
+        "frontend/src/components/site/InquiryListDebug.tsx",
+        "frontend/src/hooks/useInquiryList.ts",
+        "frontend/src/hooks/useInquirySubmission.ts",
+        "frontend/src/lib/serviceInterest.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-cohesive-visual-theme-suitable-for-a-tech-services-business-e-g-clean-industrial-tech-using-a-consistent-color-palette-typography-spacing-and-components-across-all-pages-sections-avoid-default-unstyled-template-look",
+      "featureTitle": "Apply a cohesive visual theme suitable for a tech services business (e.g., clean industrial tech) using a consistent color palette, typography, spacing, and components across all pages/sections (avoid default/unstyled template look).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/site/HeroSection.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-footer-with-nk-systech-basic-business-info-placeholders-address-placeholder-phone-placeholder-email-placeholder-and-quick-links-to-home-about-services-contact",
+      "featureTitle": "Add a footer with NK SYSTECH basic business info placeholders (address placeholder, phone placeholder, email placeholder) and quick links to Home/About/Services/Contact.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/site/Footer.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-generated-static-image-assets-to-the-frontend-and-use-them-in-the-ui-logo-in-header-footer-hero-banner-on-home-icons-illustrations-in-services",
+      "featureTitle": "Add generated static image assets to the frontend and use them in the UI (logo in header/footer, hero/banner on Home, icons/illustrations in Services).",
+      "files": [
+        "frontend/src/components/site/Footer.tsx",
+        "frontend/src/components/site/Header.tsx",
+        "frontend/src/components/site/HeroSection.tsx",
+        "frontend/src/components/site/ServicesSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
