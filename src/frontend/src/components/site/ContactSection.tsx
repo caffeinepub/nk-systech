@@ -6,7 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { CheckCircle2, AlertCircle, Loader2, Phone, MessageCircle } from 'lucide-react';
 import { Section } from './Section';
 import { useInquirySubmission } from '@/hooks/useInquirySubmission';
 import { InquiryListDebug } from './InquiryListDebug';
@@ -47,8 +47,35 @@ export function ContactSection() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
           <p className="text-lg text-muted-foreground">
-            Have a question or need a quote? Fill out the form below and we'll get back to you shortly.
+            Have a question or need a quote? Contact us directly or fill out the form below.
           </p>
+        </div>
+
+        {/* Direct Contact Buttons */}
+        <div className="mb-8 p-6 bg-background rounded-lg border shadow-sm">
+          <h3 className="text-lg font-semibold mb-3 text-center">Contact Us Directly</h3>
+          <p className="text-sm text-muted-foreground text-center mb-4">
+            For immediate assistance, call us or message on WhatsApp
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Button asChild size="lg" variant="default" className="flex-1 sm:flex-none">
+              <a href="tel:9080250925" className="flex items-center justify-center gap-2">
+                <Phone className="h-5 w-5" />
+                Call Now
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="secondary" className="flex-1 sm:flex-none">
+              <a 
+                href="https://wa.me/919080250925" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2"
+              >
+                <MessageCircle className="h-5 w-5" />
+                WhatsApp
+              </a>
+            </Button>
+          </div>
         </div>
 
         <Card>

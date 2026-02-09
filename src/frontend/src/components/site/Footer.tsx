@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin, User } from 'lucide-react';
 import { ScrollToSectionLink } from './ScrollToSectionLink';
+import { BrandLogo } from './BrandLogo';
 
 export function Footer() {
   const quickLinks = [
@@ -15,13 +16,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Section */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img
-                src="/assets/generated/nk-systech-logo.dim_512x512.png"
-                alt="NK SYSTECH Logo"
-                className="h-10 w-10 object-contain"
-              />
-              <span className="text-xl font-bold">NK SYSTECH</span>
+            <div className="mb-4">
+              <BrandLogo showText />
             </div>
             <p className="text-sm text-muted-foreground">
               Your trusted partner for CCTV, Workstations, Networking, Laptops, and Computers. Multibrand sales and

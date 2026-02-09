@@ -2,9 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-replace-the-currently-used-nk-systech-logo-image-with-the-newly-uploaded-logo-nk-png-while-keeping-the-existing-logo-asset-path-used-by-the-ui-assets-generated-nk-systech-logo-dim-512x512-png-the-updated-logo-must-appear-anywhere-that-path-is-used-including-the-header-and-footer-without-requiring-code-changes-to-the-img-src-path",
-      "featureTitle": "Replace the currently used NK SYSTECH logo image with the newly uploaded logo (nk.png) while keeping the existing logo asset path used by the UI: /assets/generated/nk-systech-logo.dim_512x512.png. The updated logo must appear anywhere that path is used (including the header and footer) without requiring code changes to the img src path.",
-      "files": [],
+      "featureId": "feature-add-prominent-call-now-and-whatsapp-contact-buttons-to-the-contact-section-section-id-contact-using-the-phone-number-9080250925-so-visitors-can-contact-nk-systech-directly-as-an-alternative-to-email-delivery",
+      "featureTitle": "Add prominent \"Call Now\" and \"WhatsApp\" contact buttons to the Contact section (section id \"contact\") using the phone number 9080250925, so visitors can contact NK SYSTECH directly as an alternative to email delivery.",
+      "files": [
+        "frontend/src/components/site/ContactSection.tsx"
+      ],
       "components": [
         "core-infrastructure@1.0.2",
         "shadcn-ui@1.0.0",
@@ -13,7 +15,25 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-15"
+        "REQ-20"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-update-the-contact-section-copy-to-clarify-that-visitors-can-either-submit-the-inquiry-form-or-contact-directly-via-phone-whatsapp-without-changing-other-site-sections",
+      "featureTitle": "Update the Contact section copy to clarify that visitors can either submit the inquiry form or contact directly via phone/WhatsApp, without changing other site sections.",
+      "files": [
+        "frontend/src/components/site/ContactSection.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-21"
       ],
       "confidence": "high"
     }

@@ -1,21 +1,38 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Update NK SYSTECH logo asset in-place",
+  "title": "Add Call Now and WhatsApp buttons to Contact section",
   "requirements": [
     {
-      "id": "REQ-15",
-      "summary": "Replace the existing generated logo file in-place so all UI references to /assets/generated/nk-systech-logo.dim_512x512.png display the newly uploaded nk.png logo without changing any code paths.",
+      "id": "REQ-20",
+      "summary": "Add prominent Call Now and WhatsApp buttons in the Contact section (id \"contact\") using phone number 9080250925 with correct tel and wa.me links.",
       "acceptanceCriteria": [
-        "The file at frontend/public/assets/generated/nk-systech-logo.dim_512x512.png is replaced/updated using the provided nk.png artwork (properly resized/cropped as needed).",
-        "The header logo and footer logo continue to reference /assets/generated/nk-systech-logo.dim_512x512.png and display the new uploaded logo correctly.",
-        "No other site images (e.g., hero/banner) are changed."
+        "The Contact section displays two clearly labeled buttons: \"Call Now\" and \"WhatsApp\".",
+        "\"Call Now\" uses a tel link to 9080250925 (href=\"tel:9080250925\").",
+        "\"WhatsApp\" opens WhatsApp chat for 9080250925 using a wa.me link with the correct country code for India (https://wa.me/919080250925) and opens in a new tab (target=\"_blank\" with rel=\"noopener noreferrer\").",
+        "Buttons are visible and usable on both mobile and desktop layouts and do not break the existing inquiry form submission flow.",
+        "All user-facing text on the buttons is in English."
       ],
       "file_operations": [
         {
-          "path": "frontend/public/assets/generated/nk-systech-logo.dim_512x512.png",
+          "path": "frontend/src/components/site/ContactSection.tsx",
           "operation": "modify",
-          "description": "Replace the contents of this file with the newly uploaded nk.png artwork, ensuring it remains a 512x512 PNG (cropped/resized as needed) while keeping the exact same filename and path so Header/Footer (and any other usages) automatically show the updated logo without any code changes."
+          "description": "Add a prominent direct-contact button group near the Contact section header and/or near the inquiry form. Use the existing shadcn-ui Button component to render consistent, accessible buttons/links (e.g., as link-styled buttons) for: (1) href=\"tel:9080250925\" labeled \"Call Now\" and (2) href=\"https://wa.me/919080250925\" labeled \"WhatsApp\" with target=\"_blank\" and rel=\"noopener noreferrer\". Ensure responsive layout (stack on mobile, inline on desktop) and keep the form submission behavior unchanged. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "summary": "Update Contact section copy to clarify visitors can either submit the inquiry form or contact directly via phone/WhatsApp, without changing other sections.",
+      "acceptanceCriteria": [
+        "The Contact section includes a short English line of helper text near the new buttons (or near the form) indicating direct contact options are available.",
+        "No references are added implying inquiries will be delivered to email automatically."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/site/ContactSection.tsx",
+          "operation": "modify",
+          "description": "Revise the Contact section helper text (header paragraph and/or card description) to explicitly mention the two contact options: submit the inquiry form or contact directly by phone/WhatsApp. Keep wording in English, avoid implying automatic email delivery, and avoid changes to other sections. Verify the component's usage instructions before implementing."
         }
       ]
     }

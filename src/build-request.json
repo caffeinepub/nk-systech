@@ -1,39 +1,66 @@
 {
   "kind": "build_request",
-  "title": "Replace site logo with newly submitted image",
+  "title": "Add Call Now and WhatsApp contact buttons on the Contact section (9080250925)",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-15",
-      "text": "Replace the currently used NK SYSTECH logo image with the newly uploaded logo (nk.png) while keeping the existing logo asset path used by the UI: /assets/generated/nk-systech-logo.dim_512x512.png. The updated logo must appear anywhere that path is used (including the header and footer) without requiring code changes to the img src path.",
+      "id": "REQ-20",
+      "text": "Add prominent \"Call Now\" and \"WhatsApp\" contact buttons to the Contact section (section id \"contact\") using the phone number 9080250925, so visitors can contact NK SYSTECH directly as an alternative to email delivery.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-6",
+          "msg-8",
+          "msg-10",
+          "msg-11"
         ],
         "quotes": [
-          "change the submitted logo"
+          "need site inquires recieve by my mail",
+          "3",
+          "yes proceed",
+          "build"
         ]
       },
       "acceptanceCriteria": [
-        "The file at frontend/public/assets/generated/nk-systech-logo.dim_512x512.png is replaced/updated using the provided nk.png artwork (properly resized/cropped as needed).",
-        "The header logo and footer logo continue to reference /assets/generated/nk-systech-logo.dim_512x512.png and display the new uploaded logo correctly.",
-        "No other site images (e.g., hero/banner) are changed."
+        "The Contact section displays two clearly labeled buttons: \"Call Now\" and \"WhatsApp\".",
+        "\"Call Now\" uses a tel link to 9080250925 (href=\"tel:9080250925\").",
+        "\"WhatsApp\" opens WhatsApp chat for 9080250925 using a wa.me link with the correct country code for India (https://wa.me/919080250925) and opens in a new tab (target=\"_blank\" with rel=\"noopener noreferrer\").",
+        "Buttons are visible and usable on both mobile and desktop layouts and do not break the existing inquiry form submission flow.",
+        "All user-facing text on the buttons is in English."
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "text": "Update the Contact section copy to clarify that visitors can either submit the inquiry form or contact directly via phone/WhatsApp, without changing other site sections.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-6",
+          "msg-8"
+        ],
+        "quotes": [
+          "need site inquires recieve by my mail",
+          "any other  options to get"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Contact section includes a short English line of helper text near the new buttons (or near the form) indicating direct contact options are available.",
+        "No references are added implying inquiries will be delivered to email automatically."
       ]
     }
   ],
   "constraints": [
-    "Do not change the existing logo asset path referenced by the UI: /assets/generated/nk-systech-logo.dim_512x512.png.",
-    "Do not edit files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or anything in frontend/src/components/ui."
+    "Frontend immutable paths must not be edited: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, frontend/src/components/ui.",
+    "Backend must remain a single Motoko actor (no additional backend services).",
+    "Use English for any user-facing text."
   ],
   "nonGoals": [
-    "Redesigning the header/footer layout or changing any text content.",
-    "Updating backend logic or data models."
+    "Sending inquiries to email (email delivery) or integrating any third-party email provider.",
+    "Adding WhatsApp API automation or real-time chat.",
+    "Changing the existing inquiry storage behavior in the backend."
   ],
   "imageRequirements": {
     "required": [],
-    "edits": [
-      "Replace the site logo with the newly uploaded image (nk.png > nk-systech-logo.dim_512x512.png)"
-    ]
+    "edits": []
   }
 }

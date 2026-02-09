@@ -1,11 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Update the site’s NK SYSTECH logo to use the newly uploaded artwork while keeping the existing logo file path used throughout the UI.
+**Goal:** Provide direct phone and WhatsApp contact options in the Contact section so visitors can reach NK SYSTECH without relying on email delivery.
 
 **Planned changes:**
-- Replace the existing logo file at `frontend/public/assets/generated/nk-systech-logo.dim_512x512.png` with an updated image derived from `nk.png` (resize/crop as needed to fit 512×512).
-- Ensure the header and footer continue to load the logo from `/assets/generated/nk-systech-logo.dim_512x512.png` with no changes to any image `src` paths.
-- Leave all other site images (e.g., hero/banner, service icons) unchanged.
+- Add two prominent buttons in the Contact section (id: `contact`): “Call Now” (`href="tel:9080250925"`) and “WhatsApp” (`https://wa.me/919080250925`, opens in a new tab with `rel="noopener noreferrer"`).
+- Add a short English helper line in the Contact section clarifying that visitors can either submit the inquiry form or contact directly via phone/WhatsApp (without implying inquiries are delivered to email).
+- Ensure the new buttons work well on mobile and desktop and do not disrupt the existing inquiry form flow.
 
-**User-visible outcome:** The site header and footer display the new NK logo everywhere the existing logo asset path is used, without any other visual changes.
+**User-visible outcome:** Visitors can choose to submit the inquiry form or contact NK SYSTECH instantly via a Call Now button or a WhatsApp chat link from the Contact section.

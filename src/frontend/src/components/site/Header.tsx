@@ -1,8 +1,9 @@
 import { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
 import { ScrollToSectionLink } from './ScrollToSectionLink';
+import { BrandLogo } from './BrandLogo';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,13 +18,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center justify-between">
-        <ScrollToSectionLink sectionId="home" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
-          <img
-            src="/assets/generated/nk-systech-logo.dim_512x512.png"
-            alt="NK SYSTECH Logo"
-            className="h-10 w-10 object-contain"
-          />
-          <span className="text-xl font-bold tracking-tight">NK SYSTECH</span>
+        <ScrollToSectionLink sectionId="home" className="flex items-center hover:opacity-80 transition-opacity">
+          <BrandLogo showText />
         </ScrollToSectionLink>
 
         {/* Desktop Navigation */}

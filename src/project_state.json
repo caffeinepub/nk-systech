@@ -1,13 +1,16 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 13,
+  "projectStateVersion": 21,
   "summary": "Business website for college project: NK SYSTECH (CCTV, workstations, networking, laptops/computers) multibrand sales and service.",
-  "architectural_notes": [],
+  "architectural_notes": [
+    "Email delivery for inquiries is not available (account email feature disabled); use a “Call Now / WhatsApp” button as the selected alternative contact path."
+  ],
   "known_issues": [
-    "Production deployment failed with a deployment error (needs investigation/fix before launch)."
+    "Production deployment failed with a deployment error (needs investigation/fix before launch).",
+    "Build/deploy encountered a configuration error (\"Please notify the Caffeine team\") while attempting logo update.",
+    "Logo update not reflected in the deployed site (logo not showing)."
   ],
   "isFixRequest": false,
-  "imageRequirements": "## Edit Images\n- Replace the site logo with the newly uploaded image (nk.png > nk-systech-logo.dim_512x512.png)",
   "existing_features": [
     {
       "id": "feature-create-a-responsive-multi-section-business-website-for-nk-systech-with-clear-navigation-and-content-for-home-about-services-and-contact",
@@ -128,6 +131,46 @@
         "REQ-15"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-ensure-the-nk-systech-logo-displays-reliably-in-both-the-site-header-and-footer-by-verifying-that-the-static-asset-at-the-exact-path-assets-generated-nk-systech-logo-dim-512x512-png-exists-in-the-frontend-public-assets-is-included-in-the-production-build-output-and-is-served-without-404s-at-runtime",
+      "title": "Ensure the NK SYSTECH logo displays reliably in both the site header and footer by verifying that the static asset at the exact path \"/assets/generated/nk-systech-logo.dim_512x512.png\" exists in the frontend public assets, is included in the production build output, and is served without 404s at runtime.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-graceful-ui-fallback-for-the-logo-image-if-the-logo-asset-fails-to-load-e-g-show-a-simple-text-initials-mark-without-changing-any-user-facing-text-from-english",
+      "title": "Add a graceful UI fallback for the logo image if the logo asset fails to load (e.g., show a simple text/initials mark) without changing any user-facing text from English.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-generate-and-add-a-set-of-technical-services-work-pictures-inside-the-services-section-the-section-titled-our-services-so-that-visitors-can-see-real-world-technical-work-visuals-while-reading-the-service-offerings",
+      "title": "Generate and add a set of technical services/work pictures inside the Services section (the section titled \"Our Services\") so that visitors can see real-world technical work visuals while reading the service offerings.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-prominent-call-now-and-whatsapp-contact-buttons-to-the-contact-section-section-id-contact-using-the-phone-number-9080250925-so-visitors-can-contact-nk-systech-directly-as-an-alternative-to-email-delivery",
+      "title": "Add prominent \"Call Now\" and \"WhatsApp\" contact buttons to the Contact section (section id \"contact\") using the phone number 9080250925, so visitors can contact NK SYSTECH directly as an alternative to email delivery.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-contact-section-copy-to-clarify-that-visitors-can-either-submit-the-inquiry-form-or-contact-directly-via-phone-whatsapp-without-changing-other-site-sections",
+      "title": "Update the Contact section copy to clarify that visitors can either submit the inquiry form or contact directly via phone/WhatsApp, without changing other site sections.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -164,6 +207,32 @@
     {
       "id": "AR-6",
       "summary": "Replace the current site logo with the user-submitted logo asset (update header/footer/any logo usage)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Create/generate a new NK SYSTECH logo and attach/use it on the site (header/footer/logo usage)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Update the site logo using the user-uploaded image \"nk (2).png\" while keeping the existing logo URL unchanged as \"/assets/generated/nk-systech-logo.dim_512x512.png\" so the new logo appears anywhere that path is referenced (including Header and Footer).",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add technical services/work pictures within the Services section content",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add a “Call Now / WhatsApp” contact button (using 9080250925) on the Contact page/section as an alternative to email delivery for inquiries",
       "reqIds": [],
       "status": "pending"
     }
