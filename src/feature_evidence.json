@@ -2,11 +2,9 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-update-the-website-contact-information-to-include-the-owner-s-details-owner-name-nandhakumar-g-phone-9080250925-email-nandhakumar-g2402-gmail-com-replace-the-existing-placeholder-phone-and-email-values-in-the-footer-and-display-the-owner-name-alongside-the-contact-information-using-clear-english-labels-e-g-owner",
-      "featureTitle": "Update the website contact information to include the owner’s details: Owner Name: NANDHAKUMAR G, Phone: 9080250925, Email: nandhakumar.g2402@gmail.com. Replace the existing placeholder phone and email values in the footer, and display the owner name alongside the contact information using clear English labels (e.g., “Owner: …”).",
-      "files": [
-        "frontend/src/components/site/Footer.tsx"
-      ],
+      "featureId": "feature-replace-the-currently-used-nk-systech-logo-image-with-the-newly-uploaded-logo-nk-png-while-keeping-the-existing-logo-asset-path-used-by-the-ui-assets-generated-nk-systech-logo-dim-512x512-png-the-updated-logo-must-appear-anywhere-that-path-is-used-including-the-header-and-footer-without-requiring-code-changes-to-the-img-src-path",
+      "featureTitle": "Replace the currently used NK SYSTECH logo image with the newly uploaded logo (nk.png) while keeping the existing logo asset path used by the UI: /assets/generated/nk-systech-logo.dim_512x512.png. The updated logo must appear anywhere that path is used (including the header and footer) without requiring code changes to the img src path.",
+      "files": [],
       "components": [
         "core-infrastructure@1.0.2",
         "shadcn-ui@1.0.0",
@@ -15,7 +13,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-8"
+        "REQ-15"
       ],
       "confidence": "high"
     }

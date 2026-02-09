@@ -1,10 +1,13 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
+  "projectStateVersion": 13,
   "summary": "Business website for college project: NK SYSTECH (CCTV, workstations, networking, laptops/computers) multibrand sales and service.",
   "architectural_notes": [],
-  "known_issues": [],
+  "known_issues": [
+    "Production deployment failed with a deployment error (needs investigation/fix before launch)."
+  ],
   "isFixRequest": false,
+  "imageRequirements": "## Edit Images\n- Replace the site logo with the newly uploaded image (nk.png > nk-systech-logo.dim_512x512.png)",
   "existing_features": [
     {
       "id": "feature-create-a-responsive-multi-section-business-website-for-nk-systech-with-clear-navigation-and-content-for-home-about-services-and-contact",
@@ -69,6 +72,62 @@
         "REQ-8"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-investigate-and-fix-the-root-cause-of-the-production-deployment-failure-so-the-project-can-successfully-build-and-deploy",
+      "title": "Investigate and fix the root cause of the production deployment failure so the project can successfully build and deploy.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-backend-serviceinterest-enum-to-use-nk-systech-related-variants-cctv-workstations-networking-laptops-computers-other-instead-of-the-current-energy-themed-variants-and-update-the-frontend-mapping-so-the-contact-form-submits-and-displays-the-correct-service-interest-values-end-to-end",
+      "title": "Update the backend ServiceInterest enum to use NK SYSTECH-related variants (CCTV, Workstations, Networking, Laptops, Computers, Other) instead of the current energy-themed variants, and update the frontend mapping so the contact form submits and displays the correct service interest values end-to-end.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-or-gate-the-testing-only-inquiry-debug-panel-view-submitted-inquiries-testing-so-it-does-not-appear-in-the-production-ui",
+      "title": "Remove or gate the testing-only inquiry debug panel (\"View Submitted Inquiries (Testing)\") so it does not appear in the production UI.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-site-s-displayed-contact-information-to-include-the-business-address-9-16-18-voc-street-04-peelamedu-mainroad-sowripalayam-coimbatore-tamilnadu-641028-in-the-footer-contact-information-area-using-an-english-label-address-and-readable-multi-line-formatting",
+      "title": "Update the site’s displayed contact information to include the business address: \"9/16-18, VOC STREET-04, PEELAMEDU MAINROAD, SOWRIPALAYAM, COIMBATORE, TAMILNADU - 641028\" in the footer contact information area, using an English label (\"Address:\") and readable multi-line formatting.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-phone-number-field-from-the-contact-enquiry-form-ui-and-update-the-form-state-validation-submission-so-users-can-submit-an-inquiry-without-providing-a-phone-number",
+      "title": "Remove the Phone Number field from the Contact/Enquiry form UI and update the form state + validation + submission so users can submit an inquiry without providing a phone number.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-nk-systech-logo-used-in-the-site-header-and-footer-with-the-user-submitted-logo-image-keeping-the-existing-logo-asset-path-used-by-the-ui",
+      "title": "Replace the current NK SYSTECH logo used in the site header and footer with the user-submitted logo image, keeping the existing logo asset path used by the UI.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-currently-used-nk-systech-logo-image-with-the-newly-uploaded-logo-nk-png-while-keeping-the-existing-logo-asset-path-used-by-the-ui-assets-generated-nk-systech-logo-dim-512x512-png-the-updated-logo-must-appear-anywhere-that-path-is-used-including-the-header-and-footer-without-requiring-code-changes-to-the-img-src-path",
+      "title": "Replace the currently used NK SYSTECH logo image with the newly uploaded logo (nk.png) while keeping the existing logo asset path used by the UI: /assets/generated/nk-systech-logo.dim_512x512.png. The updated logo must appear anywhere that path is used (including the header and footer) without requiring code changes to the img src path.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -87,6 +146,24 @@
     {
       "id": "AR-3",
       "summary": "Add owner contact details (Owner: NANDHAKUMAR G, Phone: 9080250925, Email: nandhakumar.g2402@gmail.com) to the site (e.g., footer/contact section)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Add business address to the website (Footer/Contact): 9/16-18, VOC STREET-04, PEELAMEDU MAINROAD, SOWRIPALAYAM, COIMBATORE, TAMILNADU - 641028",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Update the enquiry/contact form to remove the Phone Number field/option from the enquiry section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Replace the current site logo with the user-submitted logo asset (update header/footer/any logo usage)",
       "reqIds": [],
       "status": "pending"
     }

@@ -7,7 +7,6 @@ type SubmissionStatus = 'idle' | 'loading' | 'success' | 'error';
 
 interface FormData {
   name: string;
-  phone: string;
   email: string;
   serviceInterest: string;
   message: string;
@@ -20,7 +19,6 @@ export function useInquirySubmission() {
 
   const validateForm = (data: FormData): string | null => {
     if (!data.name.trim()) return 'Name is required';
-    if (!data.phone.trim()) return 'Phone number is required';
     if (!data.email.trim()) return 'Email is required';
     if (!data.email.includes('@')) return 'Please enter a valid email address';
     if (!data.serviceInterest) return 'Please select a service interest';
@@ -47,7 +45,8 @@ export function useInquirySubmission() {
 
     try {
       const backendServiceInterest = mapToBackendServiceInterest(data.serviceInterest);
-      await actor.submitInquiry(data.name, data.phone, data.email, backendServiceInterest, data.message);
+      // Pass empty string for phoneNumber since backend still requires it
+      await actor.submitInquiry(data.name, '', data.email, backendServiceInterest, data.message);
       setStatus('success');
     } catch (err) {
       setStatus('error');

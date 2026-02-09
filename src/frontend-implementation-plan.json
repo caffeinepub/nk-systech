@@ -1,23 +1,21 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Add owner contact details to NK SYSTECH footer",
+  "title": "Update NK SYSTECH logo asset in-place",
   "requirements": [
     {
-      "id": "REQ-8",
-      "summary": "Replace footer placeholder phone/email and add explicit owner name label in Contact Information area.",
+      "id": "REQ-15",
+      "summary": "Replace the existing generated logo file in-place so all UI references to /assets/generated/nk-systech-logo.dim_512x512.png display the newly uploaded nk.png logo without changing any code paths.",
       "acceptanceCriteria": [
-        "In the footer Contact Information area, the phone number is shown as 9080250925 (no placeholder number remains).",
-        "In the footer Contact Information area, the email is shown as nandhakumar.g2402@gmail.com (no placeholder email remains).",
-        "The footer Contact Information area explicitly shows the owner name as “Owner: NANDHAKUMAR G”.",
-        "All user-facing labels are in English.",
-        "No backend/canister changes are introduced."
+        "The file at frontend/public/assets/generated/nk-systech-logo.dim_512x512.png is replaced/updated using the provided nk.png artwork (properly resized/cropped as needed).",
+        "The header logo and footer logo continue to reference /assets/generated/nk-systech-logo.dim_512x512.png and display the new uploaded logo correctly.",
+        "No other site images (e.g., hero/banner) are changed."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/site/Footer.tsx",
+          "path": "frontend/public/assets/generated/nk-systech-logo.dim_512x512.png",
           "operation": "modify",
-          "description": "Update the Contact Information block to replace the placeholder phone and email with 9080250925 and nandhakumar.g2402@gmail.com, and add an explicit owner line labeled in English (e.g., \"Owner: NANDHAKUMAR G\") displayed alongside the contact details."
+          "description": "Replace the contents of this file with the newly uploaded nk.png artwork, ensuring it remains a 512x512 PNG (cropped/resized as needed) while keeping the exact same filename and path so Header/Footer (and any other usages) automatically show the updated logo without any code changes."
         }
       ]
     }

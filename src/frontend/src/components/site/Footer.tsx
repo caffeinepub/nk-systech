@@ -50,25 +50,34 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Contact Information</h3>
             <div className="flex flex-col gap-3 text-sm text-muted-foreground">
               <div className="flex items-center gap-2">
-                <User className="h-4 w-4 flex-shrink-0" />
+                <User className="h-4 w-4 shrink-0" />
                 <span>
                   <span className="font-medium text-foreground">Owner:</span> NANDHAKUMAR G
                 </span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone className="h-4 w-4 flex-shrink-0" />
+                <Phone className="h-4 w-4 shrink-0" />
                 <a href="tel:9080250925" className="hover:text-foreground transition-colors">
                   9080250925
                 </a>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="h-4 w-4 flex-shrink-0" />
+                <Mail className="h-4 w-4 shrink-0" />
                 <a
                   href="mailto:nandhakumar.g2402@gmail.com"
                   className="hover:text-foreground transition-colors break-all"
                 >
                   nandhakumar.g2402@gmail.com
                 </a>
+              </div>
+              <div className="flex items-start gap-2">
+                <MapPin className="h-4 w-4 shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <span className="font-medium text-foreground">Address:</span>{' '}
+                  <span className="break-words leading-relaxed">
+                    9/16-18, VOC STREET-04, PEELAMEDU MAINROAD, SOWRIPALAYAM, COIMBATORE, TAMILNADU - 641028
+                  </span>
+                </div>
               </div>
             </div>
           </div>

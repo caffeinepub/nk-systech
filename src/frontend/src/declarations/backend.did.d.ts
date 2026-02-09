@@ -19,13 +19,12 @@ export interface Inquiry {
   'timestamp' : bigint,
   'phoneNumber' : string,
 }
-export type ServiceInterest = { 'sustainabilityStrategy' : null } |
-  { 'energyTransition' : null } |
+export type ServiceInterest = { 'laptops' : null } |
   { 'other' : null } |
-  { 'energyStorage' : null } |
-  { 'renewableEnergyConsulting' : null } |
-  { 'solarDevelopment' : null } |
-  { 'energyPurchasingAnalysis' : null };
+  { 'cctv' : null } |
+  { 'networking' : null } |
+  { 'computers' : null } |
+  { 'workstations' : null };
 export interface _SERVICE {
   'getAllInquiries' : ActorMethod<[], Array<Inquiry>>,
   'getInquiriesByServiceInterest' : ActorMethod<

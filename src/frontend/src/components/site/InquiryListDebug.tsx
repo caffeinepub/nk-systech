@@ -12,6 +12,11 @@ export function InquiryListDebug() {
   const [isOpen, setIsOpen] = useState(false);
   const { inquiries, isLoading, error } = useInquiryList(isOpen);
 
+  // Production guard - should never render in production
+  if (!import.meta.env.DEV) {
+    return null;
+  }
+
   return (
     <div className="mt-8">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>

@@ -10,27 +10,27 @@ export const serviceInterestOptions: ServiceInterestOption[] = [
   {
     value: 'cctv',
     label: 'CCTV Surveillance',
-    backendValue: ServiceInterest.energyTransition,
+    backendValue: ServiceInterest.cctv,
   },
   {
     value: 'workstations',
     label: 'Workstations',
-    backendValue: ServiceInterest.renewableEnergyConsulting,
+    backendValue: ServiceInterest.workstations,
   },
   {
     value: 'networking',
     label: 'Networking Solutions',
-    backendValue: ServiceInterest.solarDevelopment,
+    backendValue: ServiceInterest.networking,
   },
   {
     value: 'laptops',
     label: 'Laptops',
-    backendValue: ServiceInterest.energyStorage,
+    backendValue: ServiceInterest.laptops,
   },
   {
     value: 'computers',
     label: 'Desktop Computers',
-    backendValue: ServiceInterest.energyPurchasingAnalysis,
+    backendValue: ServiceInterest.computers,
   },
   {
     value: 'other',
@@ -46,5 +46,5 @@ export function mapToBackendServiceInterest(value: string): ServiceInterest {
 
 export function getServiceInterestLabel(backendValue: ServiceInterest): string {
   const option = serviceInterestOptions.find((opt) => opt.backendValue === backendValue);
-  return option?.label || 'Other';
+  return option?.label || 'Other / General Inquiry';
 }

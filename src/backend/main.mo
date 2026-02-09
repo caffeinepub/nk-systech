@@ -1,19 +1,20 @@
 import Map "mo:core/Map";
 import Array "mo:core/Array";
 import Runtime "mo:core/Runtime";
-import Text "mo:core/Text";
 import Iter "mo:core/Iter";
 import Order "mo:core/Order";
+
+
+// Migrate old state to new state using the separate migration module
 
 actor {
   module Inquiry {
     public type ServiceInterest = {
-      #energyTransition;
-      #renewableEnergyConsulting;
-      #solarDevelopment;
-      #energyStorage;
-      #energyPurchasingAnalysis;
-      #sustainabilityStrategy;
+      #cctv;
+      #workstations;
+      #networking;
+      #laptops;
+      #computers;
       #other;
     };
 

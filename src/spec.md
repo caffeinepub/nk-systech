@@ -1,11 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Update the NK SYSTECH site footer contact information to show the owner’s name and correct phone/email details.
+**Goal:** Update the site’s NK SYSTECH logo to use the newly uploaded artwork while keeping the existing logo file path used throughout the UI.
 
 **Planned changes:**
-- Replace the existing placeholder phone number in the footer Contact Information area with **9080250925**.
-- Replace the existing placeholder email in the footer Contact Information area with **nandhakumar.g2402@gmail.com**.
-- Add an explicit English-labeled owner line in the footer Contact Information area: **“Owner: NANDHAKUMAR G”**.
+- Replace the existing logo file at `frontend/public/assets/generated/nk-systech-logo.dim_512x512.png` with an updated image derived from `nk.png` (resize/crop as needed to fit 512×512).
+- Ensure the header and footer continue to load the logo from `/assets/generated/nk-systech-logo.dim_512x512.png` with no changes to any image `src` paths.
+- Leave all other site images (e.g., hero/banner, service icons) unchanged.
 
-**User-visible outcome:** The website footer displays “Owner: NANDHAKUMAR G”, the phone number “9080250925”, and the email “nandhakumar.g2402@gmail.com” with clear English labels and no placeholder contact info.
+**User-visible outcome:** The site header and footer display the new NK logo everywhere the existing logo asset path is used, without any other visual changes.

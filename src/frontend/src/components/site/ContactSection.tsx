@@ -15,7 +15,6 @@ import { serviceInterestOptions } from '@/lib/serviceInterest';
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
-    phone: '',
     email: '',
     serviceInterest: '',
     message: '',
@@ -39,6 +38,9 @@ export function ContactSection() {
   const isSuccess = status === 'success';
   const isError = status === 'error';
 
+  // Only show debug panel in development
+  const isDevelopment = import.meta.env.DEV;
+
   return (
     <Section id="contact" className="bg-muted/30">
       <div className="max-w-3xl mx-auto">
@@ -56,34 +58,18 @@ export function ContactSection() {
           </CardHeader>
           <CardContent>
             <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="name">
-                    Name <span className="text-destructive">*</span>
-                  </Label>
-                  <Input
-                    id="name"
-                    placeholder="Your full name"
-                    value={formData.name}
-                    onChange={(e) => handleInputChange('name', e.target.value)}
-                    required
-                    disabled={isLoading}
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="phone">
-                    Phone Number <span className="text-destructive">*</span>
-                  </Label>
-                  <Input
-                    id="phone"
-                    type="tel"
-                    placeholder="+1 (555) 123-4567"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    required
-                    disabled={isLoading}
-                  />
-                </div>
+              <div className="space-y-2">
+                <Label htmlFor="name">
+                  Name <span className="text-destructive">*</span>
+                </Label>
+                <Input
+                  id="name"
+                  placeholder="Your full name"
+                  value={formData.name}
+                  onChange={(e) => handleInputChange('name', e.target.value)}
+                  required
+                  disabled={isLoading}
+                />
               </div>
 
               <div className="space-y-2">
@@ -169,7 +155,7 @@ export function ContactSection() {
           </CardContent>
         </Card>
 
-        <InquiryListDebug />
+        {isDevelopment && <InquiryListDebug />}
       </div>
     </Section>
   );

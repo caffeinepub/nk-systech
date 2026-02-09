@@ -17,13 +17,12 @@ export interface Inquiry {
     phoneNumber: string;
 }
 export enum ServiceInterest {
-    sustainabilityStrategy = "sustainabilityStrategy",
-    energyTransition = "energyTransition",
+    laptops = "laptops",
     other = "other",
-    energyStorage = "energyStorage",
-    renewableEnergyConsulting = "renewableEnergyConsulting",
-    solarDevelopment = "solarDevelopment",
-    energyPurchasingAnalysis = "energyPurchasingAnalysis"
+    cctv = "cctv",
+    networking = "networking",
+    computers = "computers",
+    workstations = "workstations"
 }
 export interface backendInterface {
     getAllInquiries(): Promise<Array<Inquiry>>;

@@ -1,51 +1,39 @@
 {
   "kind": "build_request",
-  "title": "Add owner contact details to NK SYSTECH site footer",
+  "title": "Replace site logo with newly submitted image",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-8",
-      "text": "Update the website contact information to include the owner’s details: Owner Name: NANDHAKUMAR G, Phone: 9080250925, Email: nandhakumar.g2402@gmail.com. Replace the existing placeholder phone and email values in the footer, and display the owner name alongside the contact information using clear English labels (e.g., “Owner: …”).",
+      "id": "REQ-15",
+      "text": "Replace the currently used NK SYSTECH logo image with the newly uploaded logo (nk.png) while keeping the existing logo asset path used by the UI: /assets/generated/nk-systech-logo.dim_512x512.png. The updated logo must appear anywhere that path is used (including the header and footer) without requiring code changes to the img src path.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "msg-1"
         ],
         "quotes": [
-          "add OWNER NAME: NANDHAKUMAR G, PHONE: 9080250925, MAIL: nandhakumar.g2402@gmail.com"
+          "change the submitted logo"
         ]
       },
       "acceptanceCriteria": [
-        "In the footer Contact Information area, the phone number is shown as 9080250925 (no placeholder number remains).",
-        "In the footer Contact Information area, the email is shown as nandhakumar.g2402@gmail.com (no placeholder email remains).",
-        "The footer Contact Information area explicitly shows the owner name as “Owner: NANDHAKUMAR G”.",
-        "All user-facing labels are in English.",
-        "No backend/canister changes are introduced."
+        "The file at frontend/public/assets/generated/nk-systech-logo.dim_512x512.png is replaced/updated using the provided nk.png artwork (properly resized/cropped as needed).",
+        "The header logo and footer logo continue to reference /assets/generated/nk-systech-logo.dim_512x512.png and display the new uploaded logo correctly.",
+        "No other site images (e.g., hero/banner) are changed."
       ]
     }
   ],
   "constraints": [
-    "Frontend files under frontend/src/components/ui are read-only and must not be edited directly.",
-    "Do not modify files listed in frontend immutablePaths (compose components instead if needed).",
-    "Keep backend as a single Motoko actor; do not add new backend services."
+    "Do not change the existing logo asset path referenced by the UI: /assets/generated/nk-systech-logo.dim_512x512.png.",
+    "Do not edit files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or anything in frontend/src/components/ui."
   ],
   "nonGoals": [
-    "Adding or changing business address text (no address was provided).",
-    "Changing the inquiry form fields or backend inquiry storage logic.",
-    "Adding authentication or admin-only editing for contact details."
+    "Redesigning the header/footer layout or changing any text content.",
+    "Updating backend logic or data models."
   ],
   "imageRequirements": {
     "required": [],
-    "edits": []
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
+    "edits": [
+      "Replace the site logo with the newly uploaded image (nk.png > nk-systech-logo.dim_512x512.png)"
+    ]
   }
 }

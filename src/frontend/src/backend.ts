@@ -99,13 +99,12 @@ export interface Inquiry {
     phoneNumber: string;
 }
 export enum ServiceInterest {
-    sustainabilityStrategy = "sustainabilityStrategy",
-    energyTransition = "energyTransition",
+    laptops = "laptops",
     other = "other",
-    energyStorage = "energyStorage",
-    renewableEnergyConsulting = "renewableEnergyConsulting",
-    solarDevelopment = "solarDevelopment",
-    energyPurchasingAnalysis = "energyPurchasingAnalysis"
+    cctv = "cctv",
+    networking = "networking",
+    computers = "computers",
+    workstations = "workstations"
 }
 export interface backendInterface {
     getAllInquiries(): Promise<Array<Inquiry>>;
@@ -207,21 +206,19 @@ function from_candid_record_n3(_uploadFile: (file: ExternalBlob) => Promise<Uint
     };
 }
 function from_candid_variant_n5(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: {
-    sustainabilityStrategy: null;
-} | {
-    energyTransition: null;
+    laptops: null;
 } | {
     other: null;
 } | {
-    energyStorage: null;
+    cctv: null;
 } | {
-    renewableEnergyConsulting: null;
+    networking: null;
 } | {
-    solarDevelopment: null;
+    computers: null;
 } | {
-    energyPurchasingAnalysis: null;
+    workstations: null;
 }): ServiceInterest {
-    return "sustainabilityStrategy" in value ? ServiceInterest.sustainabilityStrategy : "energyTransition" in value ? ServiceInterest.energyTransition : "other" in value ? ServiceInterest.other : "energyStorage" in value ? ServiceInterest.energyStorage : "renewableEnergyConsulting" in value ? ServiceInterest.renewableEnergyConsulting : "solarDevelopment" in value ? ServiceInterest.solarDevelopment : "energyPurchasingAnalysis" in value ? ServiceInterest.energyPurchasingAnalysis : value;
+    return "laptops" in value ? ServiceInterest.laptops : "other" in value ? ServiceInterest.other : "cctv" in value ? ServiceInterest.cctv : "networking" in value ? ServiceInterest.networking : "computers" in value ? ServiceInterest.computers : "workstations" in value ? ServiceInterest.workstations : value;
 }
 function from_candid_vec_n1(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: Array<_Inquiry>): Array<Inquiry> {
     return value.map((x)=>from_candid_Inquiry_n2(_uploadFile, _downloadFile, x));
@@ -230,34 +227,30 @@ function to_candid_ServiceInterest_n6(_uploadFile: (file: ExternalBlob) => Promi
     return to_candid_variant_n7(_uploadFile, _downloadFile, value);
 }
 function to_candid_variant_n7(_uploadFile: (file: ExternalBlob) => Promise<Uint8Array>, _downloadFile: (file: Uint8Array) => Promise<ExternalBlob>, value: ServiceInterest): {
-    sustainabilityStrategy: null;
-} | {
-    energyTransition: null;
+    laptops: null;
 } | {
     other: null;
 } | {
-    energyStorage: null;
+    cctv: null;
 } | {
-    renewableEnergyConsulting: null;
+    networking: null;
 } | {
-    solarDevelopment: null;
+    computers: null;
 } | {
-    energyPurchasingAnalysis: null;
+    workstations: null;
 } {
-    return value == ServiceInterest.sustainabilityStrategy ? {
-        sustainabilityStrategy: null
-    } : value == ServiceInterest.energyTransition ? {
-        energyTransition: null
+    return value == ServiceInterest.laptops ? {
+        laptops: null
     } : value == ServiceInterest.other ? {
         other: null
-    } : value == ServiceInterest.energyStorage ? {
-        energyStorage: null
-    } : value == ServiceInterest.renewableEnergyConsulting ? {
-        renewableEnergyConsulting: null
-    } : value == ServiceInterest.solarDevelopment ? {
-        solarDevelopment: null
-    } : value == ServiceInterest.energyPurchasingAnalysis ? {
-        energyPurchasingAnalysis: null
+    } : value == ServiceInterest.cctv ? {
+        cctv: null
+    } : value == ServiceInterest.networking ? {
+        networking: null
+    } : value == ServiceInterest.computers ? {
+        computers: null
+    } : value == ServiceInterest.workstations ? {
+        workstations: null
     } : value;
 }
 export interface CreateActorOptions {

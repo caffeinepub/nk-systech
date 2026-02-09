@@ -9,13 +9,12 @@
 import { IDL } from '@icp-sdk/core/candid';
 
 export const ServiceInterest = IDL.Variant({
-  'sustainabilityStrategy' : IDL.Null,
-  'energyTransition' : IDL.Null,
+  'laptops' : IDL.Null,
   'other' : IDL.Null,
-  'energyStorage' : IDL.Null,
-  'renewableEnergyConsulting' : IDL.Null,
-  'solarDevelopment' : IDL.Null,
-  'energyPurchasingAnalysis' : IDL.Null,
+  'cctv' : IDL.Null,
+  'networking' : IDL.Null,
+  'computers' : IDL.Null,
+  'workstations' : IDL.Null,
 });
 export const Inquiry = IDL.Record({
   'id' : IDL.Nat,
@@ -46,13 +45,12 @@ export const idlInitArgs = [];
 
 export const idlFactory = ({ IDL }) => {
   const ServiceInterest = IDL.Variant({
-    'sustainabilityStrategy' : IDL.Null,
-    'energyTransition' : IDL.Null,
+    'laptops' : IDL.Null,
     'other' : IDL.Null,
-    'energyStorage' : IDL.Null,
-    'renewableEnergyConsulting' : IDL.Null,
-    'solarDevelopment' : IDL.Null,
-    'energyPurchasingAnalysis' : IDL.Null,
+    'cctv' : IDL.Null,
+    'networking' : IDL.Null,
+    'computers' : IDL.Null,
+    'workstations' : IDL.Null,
   });
   const Inquiry = IDL.Record({
     'id' : IDL.Nat,
